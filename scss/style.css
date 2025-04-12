@@ -1,0 +1,22 @@
+button {
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+.navigation .nav-list {
+  display: flex;
+}
+.navigation .nav-list .nav-item {
+  padding: 5px 10px;
+}
+
+.container .main {
+  display: flex;
+  justify-content: space-between;
+}/*# sourceMappingURL=style.css.map */

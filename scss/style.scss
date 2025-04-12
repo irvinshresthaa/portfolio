@@ -1,0 +1,24 @@
+button {
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  .nav-list {
+    display: flex;
+    .nav-item {
+      padding: 5px 10px;
+    }
+  }
+}
+
+.container {
+  .main {
+    display: flex;
+    justify-content: space-between;
+  }
+}
