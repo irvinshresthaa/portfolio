@@ -190,6 +190,12 @@ button {
     gap: 30px;
     flex-wrap: wrap; /* Allow wrapping for smaller screens */
   }
+  .container .main,
+  .container .services,
+  .container .skills,
+  .container .projects {
+    padding: 0px;
+  }
   .container .main-image {
     min-width: 400px;
     max-width: 400px;
@@ -214,10 +220,7 @@ button {
     align-items: center;
   }
   .container .main-image {
-    min-width: 300px;
-    max-width: 300px;
-    min-height: 300px;
-    max-height: 300px;
+    display: none;
   }
   .container .main-content {
     width: 90%; /* Adjust content width */
@@ -231,11 +234,14 @@ button {
     font-size: 1rem;
     width: 100%;
   }
+  .container .bottom-content .contact-list {
+    margin-top: 10px;
+  }
   .container .bottom-content .contact-list span {
     font-size: 0.9rem;
   }
   .container .bottom-content .contact-list .contact-logo {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
   }

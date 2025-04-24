@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
         contactBtn.className = "contact-btn";
 
         contactBtn.addEventListener("click", () => {
-          showContact = true;
           const contactModal = document.getElementById("contactModal");
           if (contactModal) {
             contactModal.classList.remove("hidden");

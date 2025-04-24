@@ -208,6 +208,13 @@ button {
       flex-wrap: wrap; /* Allow wrapping for smaller screens */
     }
 
+    .main,
+    .services,
+    .skills,
+    .projects {
+      padding: 0px;
+    }
+
     .main-image {
       min-width: 400px;
       max-width: 400px;
@@ -245,10 +252,7 @@ button {
     }
 
     .main-image {
-      min-width: 300px;
-      max-width: 300px;
-      min-height: 300px;
-      max-height: 300px;
+      display: none;
     }
 
     .main-content {
@@ -271,11 +275,12 @@ button {
 
     .bottom-content {
       .contact-list {
+        margin-top: 10px;
         span {
           font-size: 0.9rem;
         }
         .contact-logo {
-          flex-direction: column;
+          flex-direction: row;
           align-items: center;
           gap: 10px;
         }
