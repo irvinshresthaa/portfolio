@@ -246,6 +246,15 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   };
 
+  const contactBtnLEtsTalk = document.getElementById("contact")
+
+  contactBtnLEtsTalk.addEventListener("click", () => {
+    const contactModal = document.getElementById("contactModal");
+    if (contactModal) {
+      contactModal.classList.remove("hidden");
+    }
+  });
+
   projectsMapping();
   toggleAboutMe();
   loadNav();
