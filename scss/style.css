@@ -55,9 +55,11 @@ button {
 .navigation {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 10px 80px;
   color: #4b4643;
   font-weight: 500;
+  flex-wrap: wrap;
 }
 .navigation .user-logo {
   font-weight: 800;
@@ -82,11 +84,37 @@ button {
   border: none;
   color: #fdfffc;
 }
+@media (max-width: 768px) {
+  .navigation {
+    margin: 10px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navigation .nav-list {
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    margin-top: 10px;
+  }
+  .navigation .nav-list .nav-item {
+    margin: 0;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  .navigation button {
+    align-self: flex-end;
+  }
+}
 
 .container {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  /* Media Queries for Responsiveness */
+  /* For tablets and smaller screens */
+  /* For mobile screens */
+  /* Responsive adjustments */
 }
 .container .main,
 .container .services,
@@ -98,14 +126,15 @@ button {
   display: flex;
   justify-content: space-between;
   gap: 60px;
+  flex-wrap: nowrap; /* Prevent wrapping on large screens */
 }
-.container .main .main-image {
+.container .main-image {
   min-width: 500px;
   max-width: 500px;
   min-height: 500px;
   max-height: 500px;
 }
-.container .main .main-image img {
+.container .main-image img {
   border-radius: 50%;
   width: 100%;
   height: 100%;
@@ -114,47 +143,102 @@ button {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease;
 }
-.container .main .main-image img:hover {
+.container .main-image img:hover {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
 }
-.container .main .main-content {
+.container .main-content {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   width: 100%;
 }
-.container .main .main-content .top-content .desc {
+.container .top-content .desc {
   margin-top: 50px;
 }
-.container .main .main-content .top-content .desc h1 {
+.container .top-content .desc h1 {
   margin: 0px;
   color: #011627;
 }
-.container .main .main-content .top-content .desc p:nth-child(1) {
+.container .top-content .desc p:nth-child(1) {
   font-size: 1.1rem;
   margin: 22px 0px;
   color: #e71d36;
 }
-.container .main .main-content .top-content .desc p:nth-child(3) {
+.container .top-content .desc p:nth-child(3) {
   color: rgba(0, 0, 0, 0.7);
 }
-.container .main .main-content .top-content .actions button {
+.container .top-content .actions button {
   padding: 10px 20px;
   font-size: 1.1rem;
 }
-.container .main .main-content .bottom-content .contact-list {
+.container .bottom-content .contact-list {
   display: flex;
   gap: 5px;
   flex-direction: column;
 }
-.container .main .main-content .bottom-content .contact-list span {
+.container .bottom-content .contact-list span {
   font-weight: 500;
   font-size: 1rem;
 }
-.container .main .main-content .bottom-content .contact-list .contact-logo {
+.container .bottom-content .contact-list .contact-logo {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+@media screen and (max-width: 1024px) {
+  .container .main {
+    gap: 30px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  }
+  .container .main-image {
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 400px;
+    max-height: 400px;
+  }
+  .container .main-content .top-content .desc p:nth-child(1) {
+    font-size: 1rem;
+  }
+  .container .main-content .top-content .actions button {
+    padding: 8px 18px;
+    font-size: 1rem;
+  }
+  .container .main-content .bottom-content .contact-list span {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container .main {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .container .main-image {
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 300px;
+    max-height: 300px;
+  }
+  .container .main-content {
+    width: 90%; /* Adjust content width */
+  }
+  .container .top-content .desc p:nth-child(1) {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .container .top-content .actions button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    width: 100%;
+  }
+  .container .bottom-content .contact-list span {
+    font-size: 0.9rem;
+  }
+  .container .bottom-content .contact-list .contact-logo {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 }
 .container .skills {
   display: flex;
@@ -162,16 +246,44 @@ button {
   flex-direction: column;
   gap: 50px;
 }
-.container .skills .sub-heading {
+.container .sub-heading {
   text-align: center;
 }
-.container .skills .skills-list {
+.container .skills-list {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust spacing between icons */
 }
-.container .skills .skills-list svg {
+.container .skills-list svg {
   width: 125px;
   height: 125px;
+}
+@media (max-width: 768px) {
+  .container .skills {
+    gap: 30px;
+  }
+  .container .skills-list {
+    justify-content: center;
+  }
+  .container .skills-list svg {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (max-width: 480px) {
+  .container .skills {
+    gap: 20px;
+  }
+  .container .skills-list {
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .container .skills-list svg {
+    width: 80px;
+    height: 80px;
+  }
 }
 .container .projects {
   display: flex;
@@ -253,6 +365,11 @@ button {
 .container .projects .title p {
   margin: 5px 0px;
 }
+.container .services {
+  /* Media Queries for Responsiveness */
+  /* For tablets and smaller screens */
+  /* For mobile screens */
+}
 .container .services .services-container {
   display: flex;
   justify-content: space-between;
@@ -260,14 +377,14 @@ button {
   gap: 2rem; /* spacing between the list and description */
   flex-wrap: wrap; /* for responsiveness */
 }
-.container .services .services-container .services-list {
+.container .services .services-list {
   flex: 1;
   display: flex;
   min-width: 300px;
   flex-direction: column;
   gap: 20px;
 }
-.container .services .services-container .services-list .service-info {
+.container .services .service-info {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -275,7 +392,7 @@ button {
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
-.container .services .services-container .services-list .service-info .icon-container {
+.container .services .service-info .icon-container {
   width: 60px;
   height: 60px;
   min-width: 60px;
@@ -286,23 +403,70 @@ button {
   background: #2ec4b6;
   border-radius: 50%;
 }
-.container .services .services-container .services-list .service-info svg {
+.container .services .service-info svg {
   width: 30px;
   height: 30px;
 }
-.container .services .services-container .services-list .service-info .services-info {
+.container .services .service-info .services-info {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
-.container .services .services-container .services-list .service-info .services-info .services-title {
+.container .services .service-info .services-info .services-title {
   font-size: 1.2rem;
   font-weight: 500;
 }
-.container .services .services-container .services-description {
+.container .services .services-description {
   flex: 1;
   min-width: 300px;
   padding: 0px 40px;
+}
+@media screen and (max-width: 1024px) {
+  .container .services .services-container {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .container .services .services-list {
+    flex: 1 1 100%;
+    min-width: 250px;
+  }
+  .container .services .service-info {
+    padding: 15px 30px;
+  }
+  .container .services .services-description {
+    min-width: 250px;
+    padding: 0px 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container .services .services-container {
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .container .services .services-list {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+  .container .services .service-info {
+    padding: 10px 20px;
+    gap: 10px;
+  }
+  .container .services .service-info .icon-container {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+  }
+  .container .services .service-info svg {
+    width: 25px;
+    height: 25px;
+  }
+  .container .services .services-description {
+    min-width: 100%;
+    padding: 0px 20px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -310,19 +474,19 @@ button {
     flex-direction: column;
   }
 }
-/* Modal backdrop */
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
   transition: opacity 0.3s ease;
+  /* For Mobile Screens */
 }
 .modal.hidden {
   display: none;
@@ -337,11 +501,13 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  box-sizing: border-box;
 }
 @media (max-width: 768px) {
   .modal .modal-content {
     flex-direction: column;
     padding: 30px 20px;
+    max-width: 100%; /* Ensure modal fits within the viewport */
   }
 }
 .modal .close-btn {
@@ -361,15 +527,25 @@ button {
   width: 100%;
   flex-wrap: wrap;
 }
+@media (max-width: 768px) {
+  .modal .contact-section {
+    flex-direction: column; /* Stack sections vertically on smaller screens */
+  }
+}
 .modal .contact-section .contact-left,
 .modal .contact-section .contact-right {
   flex: 1;
   padding: 20px;
+  box-sizing: border-box;
 }
 @media (max-width: 768px) {
   .modal .contact-section .contact-left,
   .modal .contact-section .contact-right {
-    padding: 0;
+    padding: 15px 10px; /* Reduce padding on mobile */
+  }
+  .modal .contact-section .contact-left .contact-left,
+  .modal .contact-section .contact-right .contact-left {
+    display: none;
   }
 }
 .modal .contact-section .contact-left {
@@ -402,6 +578,7 @@ button {
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 1rem;
+  box-sizing: border-box;
 }
 .modal .contact-section .contact-right form .form-group textarea {
   resize: vertical;
@@ -419,4 +596,26 @@ button {
 }
 .modal .contact-section .contact-right form .form-group button:hover {
   background-color: #094ec4;
+}
+@media screen and (max-width: 480px) {
+  .modal .modal-content {
+    padding: 20px; /* Reduce padding for mobile */
+  }
+  .modal .close-btn {
+    font-size: 1.5rem; /* Reduce size of the close button */
+  }
+  .modal .contact-left {
+    display: none; /* Smaller title font size on mobile */
+  }
+  .modal .contact-right form .form-group {
+    margin-bottom: 15px; /* Adjust margin for mobile */
+  }
+  .modal .contact-right form input,
+  .modal .contact-right form textarea {
+    padding: 10px; /* Reduce padding for form inputs */
+  }
+  .modal .contact-right form button {
+    padding: 6px 15px; /* Smaller button padding */
+    font-size: 0.9rem; /* Smaller font size for button */
+  }
 }/*# sourceMappingURL=style.css.map */

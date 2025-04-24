@@ -108,19 +108,19 @@ document.addEventListener("DOMContentLoaded", () => {
         name: "Calculator",
         gitLink: "https://github.com/irvinshresthaa/Calculator-",
         liveLink: "https://irvinshresthaa.github.io/Calculator-/",
-        image: "../assets/calculator.png",
+        image: "./assets/calculator.png",
       },
       {
         name: "Weather App",
         gitLink: "https://github.com/irvinshresthaa/WeatherApp",
         liveLink: "https://irvinshresthaa.github.io/WeatherApp/",
-        image: "../assets/WeatherApp.png",
+        image: "./assets/WeatherApp.png",
       },
       {
         name: "Todo List",
         gitLink: "https://github.com/irvinshresthaa/TodoList",
         liveLink: "https://irvinshresthaa.github.io/TodoList/",
-        image: "../assets/TodoList.png",
+        image: "./assets/TodoList.png",
       },
       {
         name: "Sync Dating App",
@@ -133,13 +133,13 @@ document.addEventListener("DOMContentLoaded", () => {
         gitLink:
           "https://github.com/irvinshresthaa/RockPaperScissors/settings/pages",
         liveLink: "https://irvinshresthaa.github.io/RockPaperScissors/",
-        image: "../assets/RockPaper.png",
+        image: "./assets/RockPaper.png",
       },
       {
         name: "Designs",
         gitLink: "https://github.com/irvinshresthaa/Deisgns",
         liveLink: "",
-        image: "../assets/Design.png",
+        image: "./assets/Design.png",
       },
     ];
 
@@ -205,6 +205,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
       projectListContainer.appendChild(projectContainer);
     });
+  };
+
+  const emailJs = () => {
+    // Initialize EmailJS
+    (function () {
+      emailjs.init("xSnwB1TABQhOKUY07"); // Replace with your EmailJS user ID
+    })();
+
+    // Handle form submission
+    document
+      .getElementById("contactForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form from refreshing the page
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        // Send the email using EmailJS
+        emailjs
+          .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+            user_name: name,
+            user_email: email,
+            message: message,
+          })
+          .then(
+            function (response) {
+              console.log("Message sent successfully", response);
+              alert("Your message has been sent successfully!");
+              document.getElementById("contactModal").classList.add("hidden"); // Hide modal after sending
+            },
+            function (error) {
+              console.log("Failed to send message", error);
+              alert("Something went wrong. Please try again.");
+            }
+          );
+
+        // Optionally, clear the form after submission
+        document.getElementById("contactForm").reset();
+      });
   };
 
   projectsMapping();
