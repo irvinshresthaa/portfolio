@@ -54,8 +54,8 @@ button {
 
 .navigation {
   display: flex;
-  justify-content: center !important;
-  align-items: center !important;
+  justify-content: space-between;
+  align-items: flex-start !important;
   margin: 10px 80px;
   color: #4b4643;
   font-weight: 500;
