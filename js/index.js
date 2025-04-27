@@ -104,6 +104,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectsMapping = () => {
     const projects = [
       {
+        name: "AI-Summarizer",
+        gitLink: "https://github.com/irvinshresthaa/AI-Summarizer",
+        liveLink: "https://irvinshresthaa.github.io/AI-Summarizer/",
+        image: "./assets/Ai-Summarizer.png",
+      },
+      {
         name: "Calculator",
         gitLink: "https://github.com/irvinshresthaa/Calculator-",
         liveLink: "https://irvinshresthaa.github.io/Calculator-/",
@@ -246,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   };
 
-  const contactBtnLEtsTalk = document.getElementById("contact")
+  const contactBtnLEtsTalk = document.getElementById("contact");
 
   contactBtnLEtsTalk.addEventListener("click", () => {
     const contactModal = document.getElementById("contactModal");
